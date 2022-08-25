@@ -100,21 +100,36 @@
         <div class="container">
             <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
                 <h2 class="text-primary font-secondary">Formulaire de recherche</h2>
-                <h1>Trouvez vos films</h1> 
+                <h1>Trouvez vos films ou séries</h1> 
             </div>
             <div class="row gx-5">
                 <div >
                      <form method="get">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-group" id="adv-search">
-                                        <input name="moviename" type="text" class="form-control" placeholder="nom du film" />
-                                        <button class="btn btn-primary">Rechercher</button>
-                                        
-                                        </div>
-                                    </div><br> <a href="recherche_avance.html">Recherche avancée</a>
+                                <div class="col-md-4 col-lg-4 col-sm-4  col-4">                                    
+                                   <select name="SelGenre" id="SelGenre"><option value="">-</option></select>       
+                                </div>
+                                <div class="col-md-4 col-lg-4 col-sm-4  col-4">        
+                                    <input id="moviename" name="moviename" type="text" class="form-control" placeholder="nom du film" />    
+                                 </div>  
+                                      
+                                <div class="col-md-4 col-lg-4 col-4">                         
+                                        <label class="box">Désactiver le SafeSearch
+                                            <input type="checkbox" id="SafeSearch" name="SafeSearch">
+                                            <span class="mark"></span>
+                                          </label>
+                                          
                                   </div>
+                                  
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                         
+                                            <button id="btnSearch" class="btn btn-primary btnFull">Rechercher</button>
+                                               
+                                          
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -230,7 +245,7 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 <!-- My Scripts -->
     <script type="module" src="js/requester.js"></script>
-    <script type="module" src="js/recherche.js"></script>
+    <script type="module" src="js/recherche_avance.js"></script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     

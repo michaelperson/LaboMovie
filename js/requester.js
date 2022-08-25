@@ -10,6 +10,7 @@ export class TmdbRequester
         this.ProviderEndpoint=`${this.baseUrl}watch/providers/`;
         this.PersonEndPoint=`${this.baseUrl}person/`; 
         this.SearchMovieEndPoint=`${this.baseUrl}search/movie/`; 
+        this.GenreEndPoint=`${this.baseUrl}genre/movie/list`; 
         this.APIKEY="1a85f5aeaf961ae4ee8a30df575d2baa";
       }
       
@@ -97,10 +98,23 @@ export class TmdbRequester
         )
       }
 
+      getListGenres()
+      {
+        return this.request(`${this.GenreEndPoint}`)
+        .then( m=>{ return m }
+        )
+      }
 
       searchMovie(moviename,page)
       {
         return this.request(`${this.SearchMovieEndPoint}?query=${moviename}&page=${page}`)
+        .then( s=> {return s});
+      }
+
+      searchAdvance( genre, safesearch, page)
+      {
+        
+        return this.request(`${this.DiscoverEndPoint}movie?include_adult=${safesearch}&with_genres=${genre}&page=${page}`)
         .then( s=> {return s});
       }
 }
